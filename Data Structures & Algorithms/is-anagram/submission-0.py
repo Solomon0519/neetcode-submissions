@@ -1,0 +1,18 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        
+        if len(s) != len(t):
+            return False
+
+        s_count = {}
+        t_count = {}
+
+        for i in range(len(s)):
+
+            s_i = s[i]
+            t_i = t[i]
+
+            s_count[s_i] = s_count.get(s_i, 0) + 1
+            t_count[t_i] = t_count.get(t_i, 0) + 1
+
+        return s_count == t_count
